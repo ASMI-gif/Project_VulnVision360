@@ -9,12 +9,15 @@ a CIS Benchmark Level 1 compliance scan on a Linux (Ubuntu) system.
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+```
 ---
 
 ## Step 2: Install OpenSCAP and Security Guide
 
 ```bash
 sudo apt install -y openscap-scanner scap-security-guide
+
+```
 
 ---
 
@@ -33,10 +36,9 @@ e-0.1.69/
 
 ```bash 
 oscap --version
----
 
+```
  Confirms that OpenSCAP is installed correctly.
-
 ---
 
 ## Step 4: Locate CIS Benchmark Content
@@ -45,7 +47,7 @@ oscap --version
 cd  /usr/share/xml/scap/ssg/content/scap-security-guide-0.1.69/
 
 ls /usr/share/xml/scap/ssg/content/scap-security-guide-0.1.69/
-
+```
 ---
 
 Explanation:
@@ -64,7 +66,10 @@ Since my machine is Ubuntu 22.04, the correct SCAP file is ssg-ubuntu2204-ds.xml
 ```bash 
 
 oscap info ssg-ubuntu2204-ds.xml | less
+
+```
 ---
+
 Scroll slowly. You will see profiles like:
 
 cis_level1_server
@@ -86,7 +91,7 @@ sudo oscap xccdf eval \
 --results cis-results.xml \
 --report cis-report.html \
 ssg-ubuntu2204-ds.xml
-
+```
 ---
 
 This may take 2–5 minutes
@@ -99,6 +104,7 @@ After it finishes, run:
 ```bash 
 
 ls -lh cis-report.html cis-results.xml
+```
 
 ---
 You should see file sizes (MBs), not zero bytes.
@@ -112,12 +118,15 @@ Because of Ubuntu 22.04 Firefox Snap issue, do this:
 
 sudo cp cis-report.html /home/me/
 sudo chown me:me /home/me/cis-report.html
+```
+
 ---
 
 Now open it:
 ```bash 
 
 firefox /home/me/cis-report.html
+```
 ---
 
 This will open the CIS report in the browser.
@@ -127,6 +136,8 @@ Inorder to open the CIS Level 1 Report  anytime, Use this command,(From the secu
 
 ```bash 
 xdg-open cis-report.html
+```
+
 ---
 
 ## Conclusion
