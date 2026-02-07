@@ -18,10 +18,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y openscap-scanner scap-security-guide
 
 ```
-
----
-
-#### Explanation:
+Explanation:
 openscap-scanner → core SCAP scanning tool
 scap-security-guide → provides CIS benchmark profiles
 scap-Security-Guide(ssg) installs the benchmark XML files here: /usr/share/xml/scap/ssg/content/scap-security-guide-0.1.69/
@@ -34,18 +31,17 @@ e-0.1.69/
 oscap --version
 
 ```
-
- Confirms that OpenSCAP is installed correctly.
+Confirms that OpenSCAP is installed correctly.
 ---
 
 ## Step 4: Locate CIS Benchmark Content
 
 ```bash 
-cd  /usr/share/xml/scap/ssg/content/scap-security-guide-0.1.69/
+cd  /usr/share/xml/scap/ssg/content/scap-security-g uide-0.1.69/
 
 ls /usr/share/xml/scap/ssg/content/scap-security-guide-0.1.69/
 ```
----
+
 Explanation:
 This directory contains SCAP data streams including CIS benchmarks
 
@@ -65,8 +61,8 @@ oscap info ssg-ubuntu2204-ds.xml | less
 
 Scroll slowly. You will see profiles like:
 
-cis_level1_server
-cis_level1_workstation
+cis_level1_server, 
+cis_level1_workstation,
 cis_level2_*
 
 For this project, we use Level 1 Server (industry safe + beginner friendly).
@@ -83,9 +79,8 @@ sudo oscap xccdf eval \
 --report cis-report.html \
 ssg-ubuntu2204-ds.xml
 ```
-This may take 2–5 minutes
+This may take 2–5 minutes.
 ---
-
 ## Step 7: Confirm the files were created
 
 After it finishes, run:
@@ -94,9 +89,8 @@ After it finishes, run:
 
 ls -lh cis-report.html cis-results.xml
 ```
-
-You should see file sizes (MBs), not zero bytes.
 ---
+You should see file sizes (MBs), not zero bytes.
 
 ## Step 8: : Open the CIS report (Snap-safe method)
 
