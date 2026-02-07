@@ -125,8 +125,6 @@ Inorder to open the CIS Level 1 Report  anytime, Use this command,(From the secu
 xdg-open cis-report.html
 ```
 
----
-
 ## Conclusion
 
 The CIS Benchmark Level 1 scan was successfully performed using OpenSCAP.
