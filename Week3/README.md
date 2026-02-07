@@ -21,8 +21,8 @@ The goal is to evaluate system security posture, generate compliance reports, an
 - Scan completion
 - HTML report opened in browser (as a video clip)
 - CSV report verification
-[Screenshots](./Screenshots/)
-These screenshots are used as **visual proof** during review.
+
+  [Screenshots](./Screenshots/)
 
 ---
 ### Commands_and_Steps.md
@@ -30,7 +30,8 @@ Contains detailed step-by-step documentation of:
 - Commands used
 - Purpose of each command
 - Observations and outcomes
-[Commands and steps](./Commands_and_Steps.md/)
+
+  [Commands and steps](./Commands_and_Steps.md/)
 
 ---
 ## Outcomes
